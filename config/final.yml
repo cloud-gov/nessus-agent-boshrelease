@@ -1,6 +1,6 @@
 ---
+final_name: nessus-agent
 blobstore:
   provider: s3
   options:
-    bucket_name: nessus-agent-boshrelease
-final_name: nessus-agent
+    bucket_name: 18f-boshrelease-blob
