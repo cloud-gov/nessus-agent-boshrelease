@@ -1,0 +1,20 @@
+---
+packages:
+- name: nessus-agent
+  version: 1a8ef72fd0f760268216444decdf5432ee811b7c
+  fingerprint: 1a8ef72fd0f760268216444decdf5432ee811b7c
+  sha1: 79b270046972a96e1be0df7e53d99975954febb8
+  dependencies: []
+jobs:
+- name: nessus-agent
+  version: e10c3cf224ee3b2f197a58470b41fdaaf59caf65
+  fingerprint: e10c3cf224ee3b2f197a58470b41fdaaf59caf65
+  sha1: 44308856eb62357738a3c4167e2d3a041656257c
+license:
+  version: f2c8ad2a080343aa75c5a9c23c8155ec9f5775ad
+  fingerprint: f2c8ad2a080343aa75c5a9c23c8155ec9f5775ad
+  sha1: da9797432adac0a76bea6d9d9f3c92e842a4ced9
+commit_hash: 9104f42d
+uncommitted_changes: true
+name: nessus-agent
+version: '1'
