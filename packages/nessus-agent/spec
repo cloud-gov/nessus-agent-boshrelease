@@ -1,0 +1,6 @@
+---
+name: nessus-agent
+dependencies: []
+files:
+- apt/nessus-agent/profile.sh
+- apt/nessus-agent/*.deb

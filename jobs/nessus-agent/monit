@@ -1,0 +1,5 @@
+check process nessus-agent
+  with pidfile /var/vcap/sys/run/nessus-agent/nessus-agent.pid
+  start program "/var/vcap/jobs/nessus-agent/bin/monit_debugger nessus-agent_ctl '/var/vcap/jobs/nessus-agent/bin/ctl start'"
+  stop program "/var/vcap/jobs/nessus-agent/bin/monit_debugger nessus-agent_ctl '/var/vcap/jobs/nessus-agent/bin/ctl stop'"
+  group vcap
