@@ -3,7 +3,7 @@ name: nessus-agent
 packages:
 - nessus-agent
 properties:
-  nessus.key:
+  nessus-agent.key:
     description: "Nessus Key"
 templates:
   bin/ctl: bin/ctl

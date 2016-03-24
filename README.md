@@ -16,7 +16,7 @@ Then add the newrelic license to the properties section of your manifest file an
 ```
 properties:
   ...
-  nessus:
+  nessus-agent:
     key: foobar
 releases:
 - ...
