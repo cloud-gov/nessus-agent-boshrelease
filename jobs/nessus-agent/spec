@@ -5,6 +5,10 @@ packages:
 properties:
   nessus-agent.key:
     description: "Nessus Key"
+  nessus-agent.server:
+    description: "Nessus Server IP"
+  nessus-agent.port:
+    description: "Nessus Server Port"
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger

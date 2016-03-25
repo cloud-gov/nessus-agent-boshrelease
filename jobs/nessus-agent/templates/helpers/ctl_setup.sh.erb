@@ -63,8 +63,8 @@ if [[ ! -f /opt/nessus_agent/sbin/nessuscli ]]; then
 fi
 
 /opt/nessus_agent/sbin/nessuscli agent link \
---host=cloud.tenable.com \
---port=443 \
+--host=<%= p("nessus-agent.server") %> \
+--port=<%= p("nessus-agent.port") %> \
 --key=<%= p("nessus-agent.key") %>
 
 

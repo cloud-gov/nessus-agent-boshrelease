@@ -18,6 +18,8 @@ properties:
   ...
   nessus-agent:
     key: foobar
+    server: cloud.nessus.com
+    port: 443
 releases:
 - ...
 - name: nessus-agent
