@@ -9,6 +9,8 @@ properties:
     description: "Nessus Server IP"
   nessus-agent.port:
     description: "Nessus Server Port"
+  nessus-agent.group:
+    description: "Nessus Agent Group"
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger
