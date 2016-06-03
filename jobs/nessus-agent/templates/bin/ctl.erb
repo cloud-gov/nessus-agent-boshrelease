@@ -12,6 +12,17 @@ export LANG=en_US.UTF-8
 case $1 in
 
   start)
+    if [[ ! -f /opt/nessus_agent/sbin/nessuscli ]]; then
+      dpkg -i /var/vcap/packages/nessus-agent/apt/NessusAgent-6.5.6-ubuntu1110_amd64.deb
+    fi
+
+    /opt/nessus_agent/sbin/nessuscli agent link \
+    --host=<%= p("nessus-agent.server") %> \
+    --port=<%= p("nessus-agent.port") %> \
+    --key=<%= p("nessus-agent.key") %> \
+    --name=<%= name %>-<%= spec.index %>-<%= p("nessus-agent.group") %> \
+    --groups=<%= p("nessus-agent.group") %>
+
     pid_guard $PIDFILE $JOB_NAME
 
     # store pid in $PIDFILE
