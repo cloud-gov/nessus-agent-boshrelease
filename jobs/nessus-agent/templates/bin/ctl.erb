@@ -21,7 +21,7 @@ case $1 in
     --port=<%= p("nessus-agent.port") %> \
     --key=<%= p("nessus-agent.key") %> \
     --name=<%= name %>-<%= spec.index %>-<%= p("nessus-agent.group") %> \
-    --groups=<%= p("nessus-agent.group") %>
+    --groups=<%= p("nessus-agent.group") %> || true
 
     pid_guard $PIDFILE $JOB_NAME
 
