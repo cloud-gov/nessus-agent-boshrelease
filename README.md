@@ -11,7 +11,7 @@ cd newrelic-boshrelease
 bosh upload release releases/nessus-agent/nessus-agent-1.yml
 ```
 
-Then add the newrelic license to the properties section of your manifest file and the nessus-agent release to the releases section:
+Then add the nessus server info to the properties section of your manifest file and the nessus-agent release to the releases section:
 
 ```
 properties:
