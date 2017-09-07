@@ -13,7 +13,7 @@ case $1 in
 
   start)
     if [[ ! -f /opt/nessus_agent/sbin/nessuscli ]]; then
-      dpkg -i /var/vcap/packages/nessus-agent/apt/NessusAgent-6.5.6-ubuntu1110_amd64.deb
+      dpkg -i /var/vcap/packages/nessus-agent/apt/NessusAgent-*.deb
     fi
 
     # link the agent on start if needed
