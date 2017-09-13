@@ -6,6 +6,6 @@ if ! /opt/nessus_agent/sbin/nessuscli agent status; then
     --host=<%= p("nessus-agent.server") %> \
     --port=<%= p("nessus-agent.port") %> \
     --key=<%= p("nessus-agent.key") %> \
-    --name=<%= spec.deployment %>-<%= name %>-<%= spec.index %>-<%= p("nessus-agent.group") %> \
+    --name=<%= spec.deployment %>-<%= name %>-<%= spec.index %> \
     --groups=<%= p("nessus-agent.group") %> || true
 fi
