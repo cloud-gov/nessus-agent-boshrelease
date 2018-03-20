@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # "nessuscli agent status" will exit code 2 if the agent is not linked
-if /opt/nessus_agent/sbin/nessuscli agent status; then
+# drain must write an integer to stdout but nothing else
+if /opt/nessus_agent/sbin/nessuscli agent status > /dev/null; then
   /opt/nessus_agent/sbin/nessuscli agent unlink >> /var/vcap/sys/log/nessus-agent/nessus-agent.drain.log 2>&1
 fi
 
