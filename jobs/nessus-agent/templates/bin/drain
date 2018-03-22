@@ -2,7 +2,7 @@
 
 # "nessuscli agent status" will exit code 2 if the agent is not linked
 # drain must write an integer to stdout but nothing else
-if /opt/nessus_agent/sbin/nessuscli agent status > /dev/null; then
+if /opt/nessus_agent/sbin/nessuscli agent status > /dev/null 2>&1 ; then
   /opt/nessus_agent/sbin/nessuscli agent unlink >> /var/vcap/sys/log/nessus-agent/nessus-agent.drain.log 2>&1
 fi
 
