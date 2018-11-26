@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# "nessuscli agent status" will exit code 2 if the agent is not linked
-if ! /opt/nessus_agent/sbin/nessuscli agent status; then
+# "Grep `nessuscli agent status` for "\[error\]" to prevent relinking all the time
+if /opt/nessus_agent/sbin/nessuscli agent status | grep '\[error\]'; then
     /opt/nessus_agent/sbin/nessuscli agent link \
     --host=<%= p("nessus-agent.server") %> \
     --port=<%= p("nessus-agent.port") %> \
