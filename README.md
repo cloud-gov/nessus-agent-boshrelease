@@ -4,16 +4,16 @@
 
 To use this bosh release, first upload it to your bosh:
 
-```
+```sh
 bosh target BOSH_HOST
-git clone https://github.com/18F/cg-nessus-agent.git
+git clone https://github.com/18F/cg-nessus-agent-boshrelease.git
 cd cg-nessus-agent-boshrelease
-bosh upload release releases/nessus-agent/nessus-agent-1.yml
+bosh upload-release releases/nessus-agent/nessus-agent-1.yml
 ```
 
-Then add the nessus license to the properties section of your manifest file and the nessus-agent release to the releases section:
+Then add the nessus agent key to the properties section of your manifest file and the nessus-agent release to the releases section:
 
-```
+```yml
 properties:
   ...
   nessus-agent:
@@ -28,7 +28,7 @@ releases:
 
 Finally add the `nessus-agent` template to your job:
 
-```
+```yml
 - instances: 1
   name: runner_z1
   ...
