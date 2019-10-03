@@ -5,35 +5,35 @@
 To use this bosh release, first upload it to your bosh:
 
 ```sh
-bosh target BOSH_HOST
+# assuming you're logged into the target bosh director
 git clone https://github.com/18F/cg-nessus-agent-boshrelease.git
 cd cg-nessus-agent-boshrelease
-bosh upload-release releases/nessus-agent/nessus-agent-1.yml
+bosh upload-release
 ```
 
-Then add the nessus agent key to the properties section of your manifest file and the nessus-agent release to the releases section:
+If co-locating the `nessus-agent` as a job on a specific BOSH deployment manifest, you could include the `nessus-agent` similar to this:
 
 ```yml
-properties:
-  ...
-  nessus-agent:
-    key: foobar
-    server: cloud.nessus.com
-    port: 443
+# some-deployment-manifest.yml
+
 releases:
 - ...
 - name: nessus-agent
   version: latest
-```
 
-Finally add the `nessus-agent` template to your job:
-
-```yml
-- instances: 1
-  name: runner_z1
-  ...
-  templates:
-  - ...
-  - name: nessus-agent
-    release: nessus-agent
+instance_groups:
+- name: some-deployment
+  instances: ...
+  azs: ...
+  jobs:
+    - name: some-job
+      release: ...
+    # here's where you could add the nessus-agent directly:
+    - name: nessus-agent
+      release: nessus-agent
+      properties:
+        nessus-agent:
+          key: aaaabbbbbccccddddeeee11112222333
+          server: cloud.tenable.com
+          port: 443
 ```
