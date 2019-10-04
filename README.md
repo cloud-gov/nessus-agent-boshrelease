@@ -5,7 +5,7 @@
 To use this bosh release, first upload it to your bosh:
 
 ```sh
-# assuming you're logged into the target bosh director
+bosh env
 git clone https://github.com/18F/cg-nessus-agent-boshrelease.git
 cd cg-nessus-agent-boshrelease
 bosh upload-release
