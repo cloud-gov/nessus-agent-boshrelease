@@ -44,7 +44,7 @@ Alternatively, you could leverage this in your `runtime-config` as a [`BOSH add-
 # bosh update-runtime-config --name=nessus-agent nessus-agent.yml --vars-file=/tmp/nessus-agent-vars.yml
 releases:
   - name: nessus-agent
-    version: 2
+    version: '2'
 addons:
   - name: nessus-agent
     jobs:
