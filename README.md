@@ -36,4 +36,5 @@ instance_groups:
           key: aaaabbbbbccccddddeeee11112222333
           server: cloud.tenable.com
           port: 443
+          group: mygroup
 ```
