@@ -37,3 +37,29 @@ instance_groups:
           server: cloud.tenable.com
           port: 443
 ```
+
+Alternatively, you could leverage this in your `runtime-config` as a [`BOSH add-on`](https://bosh.io/docs/runtime-config/#addons):
+
+```yml
+# bosh update-runtime-config --name=nessus-agent nessus-agent.yml --vars-file=/tmp/nessus-agent-vars.yml
+releases:
+  - name: nessus-agent
+    version: 2
+addons:
+  - name: nessus-agent
+    jobs:
+      - name: nessus-agent
+        release: nessus-agent
+        properties:
+          nessus-agent:
+            key: ((nessus_agent_key))
+            server: ((nessus_agent_server))
+            port: ((nessus_agent_port))
+            group: ((nessus_agent_group))
+    include:
+      deployments:
+        - prometheus
+        - my-other-deployment
+
+# bosh -d my-other-deployment deploy ...
+```
