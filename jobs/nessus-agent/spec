@@ -11,6 +11,14 @@ properties:
     description: "Nessus Server Port"
   nessus-agent.group:
     description: "Nessus Agent Group"
+  nessus-agent.proxy-host:
+    description: "Nessus Proxy Host"
+  nessus-agent.proxy-port:
+    description: "Nessus Proxy Port"
+  nessus-agent.proxy-username:
+    description: "Nessus Proxy Username"
+  nessus-agent.proxy-password:
+    description: "Nessus Proxy Password"
 templates:
   bin/ctl.erb: bin/ctl
   bin/drain: bin/drain
