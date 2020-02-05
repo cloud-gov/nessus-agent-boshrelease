@@ -1,7 +1,9 @@
-## Changes proposed in this pull request:
+## Changes Proposed
+
 -
 -
 -
 
-## security considerations
+## Security Considerations
+
 [Note the any security considerations here, or make note of why there are none]
