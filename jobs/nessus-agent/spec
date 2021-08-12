@@ -24,6 +24,7 @@ templates:
   bin/drain: bin/drain
   bin/link-agent.sh: bin/link-agent.sh
   bin/monit_debugger: bin/monit_debugger
+  bin/pre-start: pre-start
   config/crontab: config/crontab
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh.erb: helpers/ctl_setup.sh
