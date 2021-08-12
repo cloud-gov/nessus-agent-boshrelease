@@ -1,0 +1,3 @@
+# E = don't install if the same version is installed
+# G = don't install if a newer version is installed
+dpkg -iEG /var/vcap/packages/nessus-agent/apt/NessusAgent-*.deb
