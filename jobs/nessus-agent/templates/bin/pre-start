@@ -2,6 +2,13 @@
 
 set -x
 
+undo_rc() {
+    if [[ -e /etc/rc0.d/K01nessusagent ]]; then
+        invoke-rc.d nessusagent stop
+        update-rc.d nessusagent remove
+    fi
+}
+
 echo "Starting nessus-agent pre-start"
 
 # E = don't install if the same version is installed
@@ -9,4 +16,6 @@ echo "Starting nessus-agent pre-start"
 
 echo "installing agent using dpkg"
 
+undo_rc
 dpkg -iEG /var/vcap/packages/nessus-agent/apt/NessusAgent-*.deb
+undo_rc
