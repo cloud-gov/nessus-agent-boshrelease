@@ -18,4 +18,8 @@ echo "installing agent using dpkg"
 
 undo_rc
 dpkg -iEG /var/vcap/packages/nessus-agent/apt/NessusAgent-*.deb
+# this is so dumb. Debian doesn't provide a way to skip starting a service
+# on a package that says it wants to start a service. So we have to kill nessus after
+# installing to make sure that monit will be able to start it later.
+pkill nessus
 undo_rc
