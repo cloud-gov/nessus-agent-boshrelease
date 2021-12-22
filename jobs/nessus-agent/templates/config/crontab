@@ -1,4 +1,4 @@
 # m h dom mon dow user  command
 # Sleep a random amount of time from 0-.5 minutes to avoid all agents relinking at the same time
 SHELL=/bin/bash
-30 * * * * root /bin/sleep $(( ( RANDOM \% 30 )  + 1 ))  && /var/vcap/jobs/nessus-agent/bin/link-agent.sh
+30 * * * * root /bin/sleep $(( ( RANDOM \% 300 )  + 1 ))  && /var/vcap/jobs/nessus-agent/bin/link-agent.sh
