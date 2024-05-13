@@ -1,4 +1,3 @@
-apt/nessus-agent/NessusAgent-10.2.1-ubuntu1404_amd64.deb:
-  size: 17096656
-  object_id: d312de01-a148-4a66-6ba6-7b6ae3004b84
-  sha: sha256:0a9321c228d67609c301a82dfb677ca955654e360551865721e435d1872c8976
+apt/nessus-agent/NessusAgent-10.6.3-ubuntu1404_amd64.deb:
+  size: 25513026
+  sha: sha256:2c2898fc5f8065776832c5a6a5850e83b80a23163ca712c0203cfeb8d8b79946
