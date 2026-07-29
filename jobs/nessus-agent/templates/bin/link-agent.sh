@@ -21,5 +21,8 @@ if /opt/nessus_agent/sbin/nessuscli agent status | grep '\[error\]' || \
     --proxy-password="<%= proxy_password %>" \
     <% end %> \
     --name=<%= spec.deployment %>-<%= name %>-<%= spec.index %>-<%= p("nessus-agent.group") %> \
-    --groups=<%= p("nessus-agent.group") %> || true
+    --groups=<%= spec.deployment %>,<%= p("nessus-agent.group") %> | \
+    /opt/nessus_agent/sbin/nessuscli fix --set process_priority="low" | \
+    /opt/nessus_agent/sbin/nessuscli fix --set plugin_load_performance_mode="low" | \
+    /opt/nessus_agent/sbin/nessuscli fix --set scan_performance_mode="low" ||  true
 fi
